@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #39393a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+ 
+}
+
+.card {
+  position: relative;
+  width: 600px;
+  height: 350px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.card .circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.card .circle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ff1100bd;
+  clip-path: circle(120px at center);
+  transition: 0.5s;
+}
+
+.card:hover .circle::before {
+  background: #004cff6a;
+  border-radius: 20px;
+  clip-path: circle(400px at center);
+}
+
+.img-container {
+  position: relative;
+  width: 300px; /* Ajusta el tamaño del contenedor de la imagen */
+  height: 300px; /* Ajusta el tamaño del contenedor de la imagen */
+  margin-left: auto; /* Para centrar la imagen dentro del contenedor */
+  margin-right: auto; /* Para centrar la imagen dentro del contenedor */
+}
+
+.img-container::before {
+  content: url('img/carta-removebg.png');
+  position: absolute;
+  top: 20%; /* Centra verticalmente */
+  left: 62%; /* Centra horizontalmente */
+
+  
+  transform: translate(-50%, -50%); /* Ajusta el punto de referencia */
+  transition: opacity 0.5s;
+}
+
+.card:hover .img-container::before {
+  content: url('img/poke-bola.png');
+  top: 50%; /* Centra verticalmente */
+  left: 100%; /* Centra horizontalmente */
+}
+
+.card img {
+  visibility: hidden;
+}
+
+.card .content {
+  position: relative;
+  width: 60%;
+  left: 20%;
+  padding: 20px 20px 20px 40px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.card:hover .content {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.card .content h2 {
+  color: #ff1100bd;
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 1em;
+  margin-top: 20px;
+}
+
+.card p {
+  margin-bottom: 15px;
+  color: #fbfbfb;
+}
+
+.card .content a {
+  position: relative;
+  color: rgb(249, 249, 250);
+ 
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #3a58ea;
+  margin-bottom: 10px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 536px) {
+  .card {
+    width: auto;
+    max-width: 350px;
+    align-items: flex-start;
+  }
+  .card:hover {
+    height: 600px;
+  }
+  .card .content {
+    width: 100%;
+    left: 0;
+    padding: 20px;
+  }
+  .card .content h2 {
+    font-size: 1.5em; /* Ajusta el tamaño del texto en pantallas pequeñas */
+  }
+  .card .content a {
+    padding: 10px 70px;
+  }
+  .card .img-container{
+    top:10%;
+  }
+  .card:hover .img-container::before {
+    top: 85%;
+    left: 50%;
+    height: 320px;
+  }
+}
+
+
+
+
+
+
+
+
+
